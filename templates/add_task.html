@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task to {{ list_name }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Add Task to {{ list_name }}</h1>
+        <form action="{{ url_for('add_task', list_name=list_name) }}" method="post">
+            <div class="form-group">
+                <label for="task">Task</label>
+                <input type="text" class="form-control" id="task" name="task" required>
+            </div>
+            <button type="submit" class="btn btn-success">Add Task</button>
+        </form>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('view_list', list_name=list_name) }}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>
